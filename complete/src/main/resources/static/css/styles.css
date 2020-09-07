@@ -1,7 +1,12 @@
 body{
-    background-color:yellow !important;
+    color:rgb(145, 145, 97) !important;
 }
 
 .jumbotron{
-    color: red !important;
+    background-color: rgb(110, 108, 108) !important;
+    color: rgb(124, 56, 56) !important;
+}
+
+.text-left{
+    text-align: left ! important;
 }
