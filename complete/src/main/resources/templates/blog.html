@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Custom Css
+    <link rel="stylesheet" href="styles.css"> -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -37,11 +37,16 @@
         </div>
     </nav>
     <div class="jumbotron">
-        <h1 class="display-4"><p th:text="'Hello, ' + ${name} + '!'" /></h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="display-4">Blog</h1>
+        <p class="lead">Enter text below for blog.</p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <form id ="blog-form">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Blog text area</label>
+                <textarea name="message" class="form-control" id="blogTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
     </div>
 
     <!-- Optional JavaScript -->
@@ -49,5 +54,31 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!--JavaScript for the submission of the form using JQuery and Ajax-->
+  <script>
+    //form handler
+    $("contact-form").submit(function(event){
+        //Stop form from submitting like normally would
+        event.preventDefault();
+        //default way to send data is JSON {"var":"value","var":"value"...}
+        //get values from the form above and assign to variable names
+        var formData = {"message":blogTextarea1.value};
+        $.ajax({
+            type: 'POST',
+            url: '/blog',
+            data: JSON.stringify(formData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+            }
+        });
+
+
+    });
+    
+  </script>
   </body>
 </html>

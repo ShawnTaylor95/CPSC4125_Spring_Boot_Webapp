@@ -21,6 +21,7 @@ public class HelloController {
         return "contact";
     }
 
+    //URL info
     @PostMapping("/contact")
     public String postContact(Model model, @RequestBody Contact contact){
         //Contact create object
@@ -34,4 +35,15 @@ public class HelloController {
         return "about";
     }
 
+    //Allows you to access blog page
+    @GetMapping("/blog")
+    public String blog(Model model){
+        return "blog";
+    }
+
+    @PostMapping("/blog")
+    public String postBlog(Model model, @RequestBody Blog blog){
+        System.out.println(blog.getMessage());
+        return "blog";
+    }
 }
