@@ -40,6 +40,8 @@
         <h1 class="display-4">Contact Me</h1>
         <p class="lead">Fill out the form below to contact me.</p>
         <hr class="my-4">
+        <div id="ajaxResponse">
+        </div>
         <form id ="contact-form">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
@@ -52,6 +54,7 @@
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
     </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -74,10 +77,13 @@
             url: '/contact',
             data: JSON.stringify(formData),
             contentType: "application/json; charset=utf-8",
-            dataType: "json",
             success: function(data){
-                console.log(data);
-            }
+                $('#ajaxResponse').html(data)
+            },
+            error: function(e){
+                    console.log(e);
+                     $('#ajaxResponse').html(data)('<span> Sorry we couldnt complete your request</span>')
+                }
         });
 
 

@@ -21,13 +21,16 @@ public class HelloController {
         return "contact";
     }
 
-    //URL info
+    
     @PostMapping("/contact")
     public String postContact(Model model, @RequestBody Contact contact){
         //Contact create object
-        System.out.println(contact.getEmail());
-        System.out.println(contact.getMessage());
-        return "contact";
+        //System.out.println(contact.getEmail());
+        //System.out.println(contact.getMessage());
+        // return fragment contactResponse
+        model.addAttribute("email", contact.getEmail());
+        model.addAttribute("message", contact.getMessage());
+        return "fragments/contactResponse :: #contactSuccess";
     }
 
     @GetMapping("/about")
@@ -41,6 +44,7 @@ public class HelloController {
         return "blog";
     }
 
+    //Prints blog message in terminal
     @PostMapping("/blog")
     public String postBlog(Model model, @RequestBody Blog blog){
         System.out.println(blog.getMessage());
