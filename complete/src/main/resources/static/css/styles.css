@@ -1,11 +1,12 @@
-body{
-    color:rgb(145, 145, 97) !important;
+
+.jumbotron img{
+    background-image: url("aboutmephoto.jpg") !important;
+    max-height: 150px !important;
+    max-width: 120px !important;
+    width: 120px !important;
+    height: 120px !important;
 }
 
-.jumbotron{
-    background-color: rgb(110, 108, 108) !important;
-    color: rgb(124, 56, 56) !important;
-}
 
 .text-left{
     text-align: left ! important;

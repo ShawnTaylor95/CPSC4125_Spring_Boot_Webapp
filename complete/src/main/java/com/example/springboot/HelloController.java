@@ -30,7 +30,7 @@ public class HelloController {
         // return fragment contactResponse
         model.addAttribute("email", contact.getEmail());
         model.addAttribute("message", contact.getMessage());
-        return "fragments/contactResponse :: #contactSuccess";
+        return "contactResponse :: #contactSuccess";
     }
 
     @GetMapping("/about")
