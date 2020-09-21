@@ -27,9 +27,8 @@
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
     </div>
-    <hr class="my-4">
-    <div class="blogOutput">
-    </div>
+    <div id="blogOutput">
+        </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -41,7 +40,7 @@
   <!--JavaScript for the submission of the form using JQuery and Ajax-->
   <script>
     //form handler
-    $("contact-form").submit(function(event){
+    $("#blog-form").submit(function(event){
         //Stop form from submitting like normally would
         event.preventDefault();
         //default way to send data is JSON {"var":"value","var":"value"...}
