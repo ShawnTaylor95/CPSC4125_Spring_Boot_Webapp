@@ -47,7 +47,8 @@ public class HelloController {
     //Prints blog message in terminal
     @PostMapping("/blog")
     public String postBlog(Model model, @RequestBody Blog blog){
-        System.out.println(blog.getMessage());
-        return "blog";
+        //System.out.println(blog.getMessage());
+        model.addAttribute("message", blog.getMessage());
+        return "blogResponse :: #blogSuccess";
     }
 }
