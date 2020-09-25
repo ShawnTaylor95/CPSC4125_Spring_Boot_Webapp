@@ -1,4 +1,10 @@
-#nasaAPOD{
-    height: 75vw !important;
+#nasaAPOD{ 
+    height: 50vw !important;
     background-repeat: no-repeat !important;
+    margin-left: 75px !important;
+    color:aquamarine !important;
+}
+
+#nasaAPOD data.date{
+    margin: 10px !important;
 }

@@ -16,7 +16,7 @@
   <body>
     <div th:replace="fragments/header :: header(content='home')"></div>
     <div class="jumbotron">
-        <h1 class="display-4"><p th:text="'Hello, ' + ${name} + '!'" /></h1>
+        <h1 class="display-4"><p th:text="'Hello, ' + ${name} + '!'"></h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -24,7 +24,7 @@
     </div>
     <!-- Added to add image of the day with id-->
     <div id="nasaAPOD">
-
+    
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -42,8 +42,9 @@
             url: 'https://api.nasa.gov/planetary/apod?api_key=QLzCHpxOPVNRfdy6dO8zpelNyIYRQkE6OCVZcVLr',
             dataType:'json',
             success: function(data){
-                $('#nasaAPOD').css('background',"url('" + data.url + "')")
-            },
+                $('#nasaAPOD').css('background',"url('" + data.url + "')");
+                $('#nasaAPOD').html(data.date + " /" + data.title + " /" + data.explanation);
+                },
             error: function(e){
                     console.log(e);
                     
