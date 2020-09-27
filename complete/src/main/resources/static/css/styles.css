@@ -4,7 +4,7 @@
 }
 
 #aboutMe h1, .lead{
-    color: aliceblue;
+    color: rgb(36, 86, 131);
 
 }
 
@@ -20,4 +20,12 @@ body{
 
 #nbaCares{
     margin-left: 50px !important;
+}
+
+#nasaAPOD{ 
+    height: 50vw !important;
+    background-repeat: no-repeat !important;
+    margin-left: 75px !important;
+    color:rgb(221, 255, 127) !important;
+    background-position: center !important;
 }
